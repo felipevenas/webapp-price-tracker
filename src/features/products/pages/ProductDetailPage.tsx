@@ -105,15 +105,15 @@ const ProductDetailPage: React.FC = () => {
         <div className="flex items-center space-x-4">
           <Link
             to="/dashboard"
-            className="p-2 bg-dark-900 border border-dark-800 hover:border-accent-purple rounded-xl text-gray-400 hover:text-white transition duration-200"
+            className="p-2 bg-dark-900 border border-dark-800 hover:border-accent-purple rounded-xl text-theme-muted hover:text-theme-highlight transition duration-200"
           >
             <ArrowLeft size={18} />
           </Link>
           <div className="text-left">
-            <h2 className="text-xl font-bold text-white tracking-tight line-clamp-1 max-w-[280px] md:max-w-md" title={product.name}>
+            <h2 className="text-xl font-bold text-theme-highlight tracking-tight line-clamp-1 max-w-[280px] md:max-w-md" title={product.name}>
               {product.name}
             </h2>
-            <p className="text-xs text-gray-500 mt-0.5">ID: {product.id}</p>
+            <p className="text-xs text-theme-muted mt-0.5">ID: {product.id}</p>
           </div>
         </div>
 
@@ -148,8 +148,8 @@ const ProductDetailPage: React.FC = () => {
           {/* Chart Card */}
           <Card className="text-left">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-base font-bold text-gray-100">Histórico de Preços</h3>
-              <span className="text-xs text-gray-500 font-medium">Preço em Reais (BRL)</span>
+              <h3 className="text-base font-bold text-theme-highlight">Histórico de Preços</h3>
+              <span className="text-xs text-theme-muted font-medium">Preço em Reais (BRL)</span>
             </div>
             {isHistoryLoading ? (
               <div className="h-80 flex items-center justify-center">
@@ -162,50 +162,50 @@ const ProductDetailPage: React.FC = () => {
 
           {/* Product Overview specifications */}
           <Card className="text-left">
-            <h3 className="text-base font-bold text-gray-100 mb-4">Detalhes do Rastreamento</h3>
+            <h3 className="text-base font-bold text-theme-highlight mb-4">Detalhes do Rastreamento</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 text-sm">
               <div className="flex justify-between py-2.5 border-b border-dark-800">
-                <span className="text-gray-400">Preço Atual</span>
-                <span className="font-semibold text-white">
+                <span className="text-theme-muted">Preço Atual</span>
+                <span className="font-semibold text-theme-highlight">
                   {product.current_price !== null ? formatCurrency(product.current_price) : 'Não capturado'}
                 </span>
               </div>
               <div className="flex justify-between py-2.5 border-b border-dark-800 md:border-l md:border-b md:pl-6">
-                <span className="text-gray-400">Preço Alvo</span>
-                <span className="font-semibold text-gray-300">
+                <span className="text-theme-muted">Preço Alvo</span>
+                <span className="font-semibold text-theme-base">
                   {product.target_price !== null ? formatCurrency(product.target_price) : 'Nenhum definido'}
                 </span>
               </div>
               <div className="flex justify-between py-2.5 border-b border-dark-800">
-                <span className="text-gray-400">Intervalo de Checagem</span>
-                <span className="font-semibold text-white">
+                <span className="text-theme-muted">Intervalo de Checagem</span>
+                <span className="font-semibold text-theme-highlight">
                   A cada {product.check_interval_minutes} minutos
                 </span>
               </div>
               <div className="flex justify-between py-2.5 border-b border-dark-800 md:border-l md:border-b md:pl-6">
-                <span className="text-gray-400">Status de Monitoramento</span>
-                <span className={`font-semibold ${product.active ? 'text-accent-blue' : 'text-gray-500'}`}>
+                <span className="text-theme-muted">Status de Monitoramento</span>
+                <span className={`font-semibold ${product.active ? 'text-accent-blue' : 'text-theme-muted'}`}>
                   {product.active ? 'Monitorando' : 'Suspenso'}
                 </span>
               </div>
               <div className="flex justify-between py-2.5 border-b border-dark-800 md:border-b-0">
-                <span className="text-gray-400">Última Verificação</span>
-                <span className="font-semibold text-white">
+                <span className="text-theme-muted">Última Verificação</span>
+                <span className="font-semibold text-theme-highlight">
                   {product.last_checked_at ? formatDate(product.last_checked_at) : 'Nenhuma checagem realizada'}
                 </span>
               </div>
               <div className="flex justify-between py-2.5 md:border-l md:pl-6">
-                <span className="text-gray-400">Criado em</span>
-                <span className="font-semibold text-white flex items-center">
-                  <Calendar size={14} className="mr-1 text-gray-500" />
+                <span className="text-theme-muted">Criado em</span>
+                <span className="font-semibold text-theme-highlight flex items-center">
+                  <Calendar size={14} className="mr-1 text-theme-muted" />
                   {formatDate(product.created_at)}
                 </span>
               </div>
             </div>
 
             <div className="mt-6 pt-5 border-t border-dark-800 flex justify-between items-center text-xs">
-              <span className="text-gray-500">Endereço de Origem (E-commerce)</span>
+              <span className="text-theme-muted">Endereço de Origem (E-commerce)</span>
               <a
                 href={product.url}
                 target="_blank"
@@ -222,14 +222,14 @@ const ProductDetailPage: React.FC = () => {
         <div className="space-y-6">
           <Card className="text-left">
             <div className="flex items-center justify-between mb-4 border-b border-dark-800 pb-3">
-              <h3 className="text-base font-bold text-gray-100 flex items-center">
+              <h3 className="text-base font-bold text-theme-highlight flex items-center">
                 <Settings size={16} className="mr-2 text-accent-purple" />
                 Configurar Alerta
               </h3>
               {!isEditMode && (
                 <button
                   onClick={() => setIsEditMode(true)}
-                  className="text-xs text-accent-purple hover:text-white flex items-center font-semibold bg-accent-purple/10 hover:bg-accent-purple/20 px-2.5 py-1.5 rounded-lg transition"
+                  className="text-xs text-accent-purple hover:text-theme-highlight flex items-center font-semibold bg-accent-purple/10 hover:bg-accent-purple/20 px-2.5 py-1.5 rounded-lg transition"
                 >
                   <Edit3 size={12} className="mr-1" /> Editar
                 </button>
@@ -244,28 +244,28 @@ const ProductDetailPage: React.FC = () => {
                 onCancel={() => setIsEditMode(false)}
               />
             ) : (
-              <div className="space-y-4 text-sm text-gray-300">
+              <div className="space-y-4 text-sm text-theme-base">
                 <div className="bg-dark-950 p-4 rounded-lg border border-dark-850">
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">Preço Alvo</p>
-                  <p className="text-lg font-bold text-white">
+                  <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider mb-2">Preço Alvo</p>
+                  <p className="text-lg font-bold text-theme-highlight">
                     {product.target_price !== null ? formatCurrency(product.target_price) : 'Não definido'}
                   </p>
-                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-theme-muted mt-1 leading-relaxed">
                     Você será alertado quando o preço coletado for menor ou igual a esse preço alvo.
                   </p>
                 </div>
 
                 <div className="bg-dark-950 p-4 rounded-lg border border-dark-850">
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-2">Período de Monitoramento</p>
-                  <p className="text-lg font-bold text-white">
-                    {product.check_interval_minutes} <span className="text-sm font-normal text-gray-400">Minutos</span>
+                  <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider mb-2">Período de Monitoramento</p>
+                  <p className="text-lg font-bold text-theme-highlight">
+                    {product.check_interval_minutes} <span className="text-sm font-normal text-theme-muted">Minutos</span>
                   </p>
-                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-theme-muted mt-1 leading-relaxed">
                     A API PriceTracker irá visitar a URL do e-commerce e checar o preço atual com essa periodicidade.
                   </p>
                 </div>
 
-                <p className="text-xs text-gray-500 italic">
+                <p className="text-xs text-theme-muted italic">
                   Clique no botão Editar acima para ajustar as configurações deste produto.
                 </p>
               </div>
