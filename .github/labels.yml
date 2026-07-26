@@ -1,0 +1,23 @@
+- name: bug
+  color: d73a4a
+  description: Algo não está funcionando corretamente.
+
+- name: enhancement
+  color: a2eeef
+  description: Nova funcionalidade ou proposta de melhoria.
+
+- name: documentation
+  color: 0075ca
+  description: Melhorias ou adições na documentação e manuais.
+
+- name: chore
+  color: d4c5f9
+  description: Atualizações de dependências, builds ou configurações de infraestrutura.
+
+- name: refactor
+  color: 8f52f8
+  description: Modificações de código que não alteram o comportamento final do usuário.
+
+- name: style
+  color: e99695
+  description: Ajustes de design, espaçamentos, CSS ou formatação visual.
