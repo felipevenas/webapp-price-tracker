@@ -24,9 +24,9 @@ const Button: React.FC<ButtonProps> = ({
 
   const variants = {
     primary: 'bg-accent-purple hover:bg-opacity-90 text-white shadow-glow-purple hover:shadow-lg',
-    secondary: 'bg-dark-800 hover:bg-dark-700 text-gray-200 border border-dark-700',
+    secondary: 'bg-dark-800 hover:bg-dark-700 text-theme-base border border-dark-700',
     danger: 'bg-accent-red hover:bg-opacity-90 text-white shadow-md',
-    outline: 'bg-transparent border border-dark-700 hover:border-accent-purple text-gray-300 hover:text-white',
+    outline: 'bg-transparent border border-dark-700 hover:border-accent-purple text-theme-muted hover:text-theme-highlight',
   };
 
   const sizes = {

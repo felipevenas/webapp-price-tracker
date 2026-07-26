@@ -30,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-black/75 transition-opacity"
         onClick={onClose}
       />
 
@@ -38,10 +38,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
       <div className="relative w-full max-w-md z-10 animate-in fade-in zoom-in-95 duration-200">
         <Card className="shadow-2xl border border-dark-700 bg-dark-900">
           <div className="flex items-center justify-between border-b border-dark-800 pb-3 mb-4">
-            <h3 className="text-lg font-semibold text-gray-100">{title}</h3>
+            <h3 className="text-lg font-semibold text-theme-highlight">{title}</h3>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white rounded-lg p-1 transition hover:bg-dark-800"
+              className="text-theme-muted hover:text-theme-highlight rounded-lg p-1 transition hover:bg-dark-800"
             >
               <X size={18} />
             </button>

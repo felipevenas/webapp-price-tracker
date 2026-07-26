@@ -70,8 +70,8 @@ const ProductsPage: React.FC = () => {
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="text-left">
-          <h2 className="text-2xl font-bold text-white tracking-tight">Meus Produtos</h2>
-          <p className="text-sm text-gray-400">Gerencie e monitore a variação de preços em tempo real</p>
+          <h2 className="text-2xl font-bold text-theme-highlight tracking-tight">Meus Produtos</h2>
+          <p className="text-sm text-theme-muted">Gerencie e monitore a variação de preços em tempo real</p>
         </div>
         <div className="flex items-center space-x-3">
           <Button
@@ -95,8 +95,8 @@ const ProductsPage: React.FC = () => {
             <Layers size={18} />
           </div>
           <div className="text-left">
-            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Total Monitorado</p>
-            <p className="text-xl font-bold text-white">{stats.total}</p>
+            <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider">Total Monitorado</p>
+            <p className="text-xl font-bold text-theme-highlight">{stats.total}</p>
           </div>
         </Card>
 
@@ -105,8 +105,8 @@ const ProductsPage: React.FC = () => {
             <BellRing size={18} />
           </div>
           <div className="text-left">
-            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Ativos</p>
-            <p className="text-xl font-bold text-white">{stats.activeCount}</p>
+            <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider">Ativos</p>
+            <p className="text-xl font-bold text-theme-highlight">{stats.activeCount}</p>
           </div>
         </Card>
 
@@ -115,8 +115,8 @@ const ProductsPage: React.FC = () => {
             <CheckSquare size={18} />
           </div>
           <div className="text-left">
-            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Preço Alvo Atingido</p>
-            <p className="text-xl font-bold text-white">{stats.metCount}</p>
+            <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider">Preço Alvo Atingido</p>
+            <p className="text-xl font-bold text-theme-highlight">{stats.metCount}</p>
           </div>
         </Card>
 
@@ -125,8 +125,8 @@ const ProductsPage: React.FC = () => {
             <BarChart2 size={18} />
           </div>
           <div className="text-left">
-            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Sem preço</p>
-            <p className="text-xl font-bold text-white">{stats.alertCount}</p>
+            <p className="text-xs text-theme-muted font-semibold uppercase tracking-wider">Sem preço</p>
+            <p className="text-xl font-bold text-theme-highlight">{stats.alertCount}</p>
           </div>
         </Card>
       </div>
@@ -137,10 +137,11 @@ const ProductsPage: React.FC = () => {
           {/* Search Input */}
           <div className="w-full md:max-w-xs">
             <Input
+              label="Buscar Produtos"
               placeholder="Buscar por nome ou URL..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="mb-0!"
+              containerClassName="mb-0"
               leftIcon={<Search size={16} />}
             />
           </div>
@@ -152,7 +153,7 @@ const ProductsPage: React.FC = () => {
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition ${
                 filterActive === 'all'
                   ? 'bg-accent-purple/20 text-accent-purple border border-accent-purple/30'
-                  : 'bg-dark-800 text-gray-400 hover:text-gray-200 border border-dark-700'
+                  : 'bg-dark-800 text-theme-muted hover:text-theme-base border border-dark-700'
               }`}
             >
               Todos
@@ -162,7 +163,7 @@ const ProductsPage: React.FC = () => {
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition ${
                 filterActive === 'active'
                   ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/30'
-                  : 'bg-dark-800 text-gray-400 hover:text-gray-200 border border-dark-700'
+                  : 'bg-dark-800 text-theme-muted hover:text-theme-base border border-dark-700'
               }`}
             >
               Monitorados
@@ -172,7 +173,7 @@ const ProductsPage: React.FC = () => {
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition ${
                 filterActive === 'met'
                   ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
-                  : 'bg-dark-800 text-gray-400 hover:text-gray-200 border border-dark-700'
+                  : 'bg-dark-800 text-theme-muted hover:text-theme-base border border-dark-700'
               }`}
             >
               Preço Alvo Atingido
@@ -181,8 +182,8 @@ const ProductsPage: React.FC = () => {
               onClick={() => setFilterActive('inactive')}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition ${
                 filterActive === 'inactive'
-                  ? 'bg-dark-700 text-gray-200 border border-dark-600'
-                  : 'bg-dark-800 text-gray-400 hover:text-gray-200 border border-dark-700'
+                  ? 'bg-dark-700 text-theme-base border border-dark-600'
+                  : 'bg-dark-800 text-theme-muted hover:text-theme-base border border-dark-700'
               }`}
             >
               Pausados
@@ -204,7 +205,7 @@ const ProductsPage: React.FC = () => {
       <Modal
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
-        title="Cadastrar Novo Produto para Monitoramento"
+        title="Cadastrar Novo Produto"
       >
         <ProductForm
           onSubmit={handleAddProductSubmit}
