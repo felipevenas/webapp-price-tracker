@@ -1,36 +1,42 @@
-# Descrição do Pull Request
+# Pull Request Description
 
-Por favor, inclua um resumo das alterações feitas no frontend e quais problemas ou funcionalidades foram abordados.
+Please include a summary of the frontend changes and the problem or feature they address.
 
 ---
 
-## Tipo de Alteração
+## Type of Change
 
-- [ ] 🚀 Nova funcionalidade (feature)
-- [ ] 🐞 Correção de bug (bug fix)
-- [ ] 🔧 Refatoração de código (sem alteração de funcionalidade)
-- [ ] 📝 Documentação (docs)
-- [ ] 🎨 Estilo / Design / Logs (logs, CSS, UI, etc.)
-- [ ] ⚙️ Ajuste de infraestrutura (Vite, dependências, build, CI/CD, etc.)
+- [ ] 🚀 New feature
+- [ ] 🐞 Bug fix
+- [ ] 🔧 Refactor (no functional change)
+- [ ] 📝 Documentation
+- [ ] 🎨 Style / design / UI
+- [ ] ⚙️ Infrastructure (Vite, dependencies, build, CI/CD, etc.)
 
-## Como foi testado?
+## How Was It Tested?
 
-Por favor, descreva as validações executadas para verificar suas alterações e como reproduzi-las no ambiente local.
+Describe the validation performed and how a reviewer can reproduce it locally.
 
-- [ ] **Ambiente de Desenvolvimento:** Executou `npm run dev` e validou a interface localmente no navegador.
-- [ ] **Análise Estática (Linter):** Rodou `npm run lint` (`oxlint`) e nenhuma violação ou warning de lint foi detectado.
-- [ ] **Build de Produção:** Executou `npm run build` e o pacote foi gerado na pasta `dist` sem erros de TypeScript ou Vite.
-- [ ] **Console do Navegador:** Verificou as Ferramentas do Desenvolvedor (F12) e não há exceptions de React, erros de renderização ou chamadas de API falhando no console.
-- [ ] Outros testes executados (ex: navegadores específicos, responsividade mobile):
+- [ ] **Development:** Ran `npm run dev` and exercised the affected screen in the browser.
+- [ ] **Lint:** Ran `npm run lint` (Oxlint) with no new errors or warnings.
+- [ ] **Build and types:** Ran `npm run build` and the production bundle was generated in `dist/` with no TypeScript or Vite errors.
+- [ ] **Console:** Checked DevTools and found no React exceptions, rendering errors, or failing API requests.
+- [ ] **Responsive behavior:** Checked the affected screens at mobile, tablet, and desktop widths.
+- [ ] **Themes:** Checked the affected screens in both light and dark mode.
+- [ ] Other tests performed:
 
-## Evidência Visual / Layout
+> There is no automated test suite in this repository yet. Include a clear manual test plan for behavior changes.
 
-*Cole capturas de tela da interface com as modificações ou logs significativos do terminal/console.*
+## Visual Evidence / Layout
+
+Paste screenshots, a short recording, or relevant terminal/console logs. For visual changes, include before and after images when possible, and show both themes if the change affects colors or contrast.
 
 ## Checklist
 
-- [ ] Meu código segue as diretrizes de estilo do projeto.
-- [ ] Eu fiz uma auto-revisão do meu próprio código.
-- [ ] Comentei partes do meu código que podem ser complexas ou difíceis de entender (ex: hooks complexos ou lógicas de gráficos).
-- [ ] Atualizei o arquivo `CHANGELOG.md` com as minhas modificações na versão correspondente.
-- [ ] Minhas alterações não geraram novos warnings ou erros de acessibilidade/console.
+- [ ] My change follows the project's architecture and style guidelines.
+- [ ] I reviewed my own diff before opening this pull request.
+- [ ] I added comments only where the logic is genuinely non-obvious.
+- [ ] I updated `CHANGELOG.md` under `Unreleased` for user-visible changes.
+- [ ] I updated the documentation when behavior, configuration, or scripts changed.
+- [ ] My changes introduce no new console warnings or accessibility regressions.
+- [ ] I did not add secrets, tokens, real `.env` files, or personal data.
